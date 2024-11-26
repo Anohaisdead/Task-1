@@ -2,6 +2,9 @@ package jm.task.core.jdbc.dao;
 
 import jm.task.core.jdbc.model.User;
 import jm.task.core.jdbc.util.Util;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -10,17 +13,18 @@ import java.lang.module.Configuration;
 import java.sql.Connection;
 import java.util.List;
 
+@AllArgsConstructor
 public class UserDaoHibernateImpl implements UserDao {
 
-    private final SessionFactory sessionFactory;
+    private SessionFactory sessionFactory;
 
-    public UserDaoHibernateImpl(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
-    }
-
-    public UserDaoHibernateImpl() {
-        this.sessionFactory = Util.getSessionFactory();
-    }
+//    public UserDaoHibernateImpl(SessionFactory sessionFactory) {
+//        this.sessionFactory = sessionFactory;
+//    }
+//
+//    public UserDaoHibernateImpl() {
+//        this.sessionFactory = Util.getSessionFactory();
+//    }
 
 
     @Override
