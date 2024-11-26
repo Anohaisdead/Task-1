@@ -1,21 +1,26 @@
 package jm.task.core.jdbc.dao;
 
 import jm.task.core.jdbc.model.User;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@AllArgsConstructor
 public class UserDaoJDBCImpl implements UserDao {
     private Connection connection;
 
-    public UserDaoJDBCImpl() {
-
-    }
-
-    public UserDaoJDBCImpl(Connection connection) {
-        this.connection = connection;
-    }
+//    public UserDaoJDBCImpl() {
+//
+//    }
+//
+//    public UserDaoJDBCImpl(Connection connection) {
+//        this.connection = connection;
+//    }
 
     public void createUsersTable() {
         String sql = "CREATE TABLE IF NOT EXISTS users (" +
