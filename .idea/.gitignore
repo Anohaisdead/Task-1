@@ -1,0 +1,23 @@
+# IntelliJ IDEA files
+.idea/
+*.iml
+
+# Maven output
+/target/
+
+# Logs
+*.log
+
+# HTTP Requests
+/httpRequests/
+
+# Datasource local storage
+/dataSources/
+/dataSources.local.xml
+
+# Ignored configuration files
+src/main/resources/hibernate.properties
+
+# System-specific files
+.DS_Store
+Thumbs.db

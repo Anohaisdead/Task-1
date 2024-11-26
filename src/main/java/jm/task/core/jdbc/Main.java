@@ -1,17 +1,21 @@
 package jm.task.core.jdbc;
 
 import jm.task.core.jdbc.dao.UserDao;
+import jm.task.core.jdbc.dao.UserDaoHibernateImpl;
 import jm.task.core.jdbc.dao.UserDaoJDBCImpl;
 import jm.task.core.jdbc.model.User;
 import jm.task.core.jdbc.util.Util;
+import org.hibernate.SessionFactory;
 
 import java.sql.Connection;
 
 public class Main {
     public static void main(String[] args) {
 
-        try (Connection connection = Util.getConnection()) {
-            UserDao userDao = new UserDaoJDBCImpl(connection);
+        try (SessionFactory sessionFactory = Util.getSessionFactory()) {
+//            try (Connection connection = Util.getConnection()) {
+//                UserDao userDao = new UserDaoJDBCImpl(connection);
+            UserDao userDao = new UserDaoHibernateImpl(sessionFactory);
 
             userDao.createUsersTable();
 
